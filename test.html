@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <script src="./scripts/aframe.min.js"></script>
+    <script src="./scripts/aframe-video-controls.min.js"></script>
+    <!-- <script src="./scripts/hls.min.js"></script>
+    <script src="./scripts/main.js"></script>
+    <script src="./scripts/shaka-player.compiled.js"></script>
+    <script src="./scripts/shaka-loader.js"></script>
+   <link rel="stylesheet" href="../../styles/style.css">-->
+  </head>
+  <body>
+    <script>
+  // You can also set which camera to use (front/back/etc)
+  navigator.mediaDevices.getUserMedia({audio: false, video: true})
+  .then(stream => {
+    let $video = document.querySelector('video')
+    $video.srcObject = stream
+    $video.onloadedmetadata = () => {
+      $video.play()
+    }
+  })
+</script>
+    <!--MAIN SCENE SETTINGS-->
+        <a-scene renderer="antialias: true;
+                           colorManagement: true;
+                           sortObjects: false;
+                           highRefreshRate: true;
+                           physicallyCorrectLights: true;
+                           castShadow: true;"
+                  light="defaultLightsEnabled: true;"
+                  background="color:white;"
+                  loading-screen="dotsColor: black; backgroundColor: white"
+                  cursor="rayOrigin: mouse;"
+                  raycaster="far: 100; objects: [link]">
+  <!--LOADING IN ASSETS-->
+  <a-assets>
+     <video id="webcam" playsinline crossorigin="anonymous"></video>
+   <img id="sky" src="./sky.png">
+   <img id="sky2" src="./sky2.png">
+ </a-assets>
+         <a-entity camera look-controls active="true" wasd-controls="fly:false; acceleration:1800" position="0 0 0" ></a-entity>
+         <a-video src="#webcam" width="16" height="9" position="35.36454 4.1516 -501" material="" geometry="" scale="4.56 9.43 1" rotation="0 0 2.48" opacity="1" transparent="true"></a-video>
+         <a-video src="#webcam" width="16" height="9" position="559.17943 -9.72434 -276.48316" material="" geometry="" scale="56.93 22.77 1" rotation="0 -70 0" opacity="1" transparent="true"></a-video>
+         <a-video src="#webcam" width="16" height="9" position="-1199.82796 -388.75501 -26.03505" material="" geometry="" scale="200 150 1" rotation="0 70 0" opacity="1" transparent="true"></a-video>
+         <a-video src="#webcam" width="16" height="9" position="-287.09225 -10.63358 -593.84872" material="" geometry="" scale="50 50 1" rotation="0 0 119.99999999999999" opacity="1" transparent="true"></a-video>
+
+         <a-video src="#webcam" width="16" height="9" position="35.36454 4.1516 -501" material="" geometry="" scale="4.56 9.43 1" rotation="0 0 2.48" opacity="1" transparent="true"></a-video>
+         <a-video src="#webcam" width="16" height="9" position="35.36454 4.1516 -501" material="" geometry="" scale="4.56 9.43 1" rotation="0 0 2.48" opacity="1" transparent="true"></a-video>
+         <a-video src="#webcam" width="16" height="9" position="35.36454 4.1516 -501" material="" geometry="" scale="4.56 9.43 1" rotation="0 0 2.48" opacity="1" transparent="true"></a-video>
+         <a-video src="#webcam" width="16" height="9" position="35.36454 4.1516 -501" material="" geometry="" scale="4.56 9.43 1" rotation="0 0 2.48" opacity="1" transparent="true"></a-video>
+         <a-video src="#webcam" width="16" height="9" position="35.36454 4.1516 -501" material="" geometry="" scale="4.56 9.43 1" rotation="0 0 2.48" opacity="1" transparent="true"></a-video>
+         <a-video src="#webcam" width="16" height="9" position="35.36454 4.1516 -501" material="" geometry="" scale="4.56 9.43 1" rotation="0 0 2.48" opacity="1" transparent="true"></a-video>
+
+         <a-sky src="#sky" radius="500" position="0 0 0"  opacity="1" transparent="true"></a-sky>
+         <a-sky src="#sky2" radius="500" position="0 0 0"  animation="property: material.opacity; to: 0; loop: false; dur: 10000;" transparent="true"></a-sky>
+      </a-scene>
+    </body>
+  </html>
