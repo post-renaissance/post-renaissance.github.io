@@ -14,6 +14,14 @@
    <link rel="stylesheet" href="../../styles/style.css">-->
   </head>
   <body>
+    <div class="mainUI" id="uiDiv" oncontextmenu="return false;">
+    	<!-- centered -->
+    	<div class="regionUI">
+    		<div class="buttonUI">
+        	<img src="./enter.png" id="buttonEnter" />
+    		</div>
+    	</div>
+    </div>
     <script>
   // You can also set which camera to use (front/back/etc)
   navigator.mediaDevices.getUserMedia({audio: false, video: true})
@@ -25,6 +33,7 @@
     }
   })
 </script>
+
     <!--MAIN SCENE SETTINGS-->
         <a-scene renderer="antialias: true;
                            colorManagement: true;
@@ -34,14 +43,14 @@
                            castShadow: true;"
                   light="defaultLightsEnabled: true;"
                   background="color:white;"
-                  loading-screen="dotsColor: black; backgroundColor: white"
-                  cursor="rayOrigin: mouse;"
-                  raycaster="far: 100; objects: [link]">
+                  loading-screen="dotsColor: black; backgroundColor: white">
+                  <!-- cursor="rayOrigin: mouse;"
+                  raycaster="far: 100; objects: [link]"> -->
   <!--LOADING IN ASSETS-->
   <a-assets>
      <video id="webcam" playsinline crossorigin="anonymous"></video>
-   <img id="sky" src="./sky3.png">
-   <img id="sky2" src="./sky4.png">
+   <img id="sky" src="./sky.png">
+   <img id="sky2" src="./sky2.png">
  </a-assets>
  <a-entity camera look-controls active="true" wasd-controls="fly:false; acceleration:1800" position="0 0 0" ></a-entity>
          <!-- <a-video src="#webcam" width="16" height="9" position="35.36454 4.1516 -501" material="" geometry="" scale="4.56 9.43 1" rotation="0 0 2.48" opacity="1" transparent="true"></a-video>
@@ -57,23 +66,29 @@
          <a-video src="#webcam" width="16" height="9" position="67.56659 136.48739 705.57853" material="" geometry="" scale="4.56 9.43 1" rotation="0 0 2.48" opacity="1" transparent="true"></a-video>
          <a-video src="#webcam" width="16" height="9" position="67.56659 220.92965 705.57853" material="" geometry="" scale="4.56 9.43 1" rotation="0 0 2.48" opacity="1" transparent="true"></a-video>
          <a-video src="#webcam" width="16" height="9" position="178.26167 121.60183 705.57853" material="" geometry="" scale="20 40 1" rotation="0 0 2.48" opacity="1" transparent="true"></a-video> -->
-<a-video src="#webcam" width="16" height="9" position="-223.50586 10 519.58029" material="" geometry="" scale="50 50 1" rotation="0 -20 0" opacity="1" transparent="true"></a-video>
+
+         <a-video src="#webcam" width="16" height="9" position="35.36454 4.1516 -501" material="" geometry="" scale="4.56 9.43 1" rotation="0 0 2.48" opacity="1" transparent="true"></a-video>
+         <a-video src="#webcam" width="16" height="9" position="-223.50586 10 519.58029" material="" geometry="" scale="50 50 1" rotation="0 -20 0" opacity="1" transparent="true"></a-video>
    <a-video src="#webcam" width="16" height="9" position="559.17943 -9.72434 -276.48316" material="" geometry="" scale="56.93 22.77 1" rotation="0 -70 0" opacity="1" transparent="true"></a-video>
    <a-video src="#webcam" width="16" height="9" position="559.17943 -9.72434 -276.48316" material="" geometry="" scale="56.93 22.77 1" rotation="0 -70 0" opacity="1" transparent="true"></a-video>
    <a-video src="#webcam" width="16" height="9" position="-1199.82796 -388.75501 -26.03505" material="" geometry="" scale="200 150 1" rotation="0 70 0" opacity="1" transparent="true"></a-video>
    <a-video src="#webcam" width="16" height="9" position="-287.09225 -10.63358 -593.84872" material="" geometry="" scale="50 50 1" rotation="0 0 119.99999999999999" opacity="1" transparent="true"></a-video>
-   <a-video src="#webcam" width="16" height="9" position="-372.19728 133.85281 963.32002" material="" geometry="" scale="50 100 1" rotation="0 100 180" opacity="1" transparent="true"></a-video>
+   <!-- <a-video src="#webcam" width="16" height="9" position="-372.19728 133.85281 963.32002" material="" geometry="" scale="50 100 1" rotation="0 100 180" opacity="1" transparent="true"></a-video> -->
+   <!-- <a-video src="#webcam" width="16" height="9" position="165.42244 -20.66476 -542.25814" material="" geometry="" scale="50 20 1" rotation="0 150 181.91" opacity="1" transparent="true"></a-video> -->
+   <a-video src="#webcam" width="16" height="9" position="75 100 -542.25814" material="" geometry="" scale="50 20 1" rotation="0 -10 181.91" opacity="1" transparent="true"></a-video>
    <a-video src="#webcam" width="16" height="9" position="234.53529 -8.04749 -501" material="" geometry="" scale="4.56 9.43 1" rotation="0 0 40" opacity="1" transparent="true"></a-video>
    <a-video src="#webcam" width="16" height="9" position="221.60289 38.36353 474.46344" material="" geometry="" scale="4.56 30 1" rotation="0 0 2.48" opacity="1" transparent="true"></a-video>
-   <a-video src="#webcam" width="16" height="9" position="493.05338 43.55737 416.05094" material="" geometry="" scale="40 15 1" rotation="0 59.99999999999999 0" opacity="1" transparent="true"></a-video>
-   <a-video src="#webcam" width="16" height="9" position="67.56659 -18.31924 705.57853" material="" geometry="" scale="4.56 9.43 1" rotation="0 0 2.48" opacity="1" transparent="true"></a-video>
+   <!-- <a-video src="#webcam" width="16" height="9" position="493.05338 43.55737 416.05094" material="" geometry="" scale="40 15 1" rotation="0 59.99999999999999 0" opacity="1" transparent="true"></a-video> -->
+   <!-- <a-video src="#webcam" width="16" height="9" position="67.56659 -18.31924 705.57853" material="" geometry="" scale="4.56 9.43 1" rotation="0 0 2.48" opacity="1" transparent="true"></a-video>
    <a-video src="#webcam" width="16" height="9" position="67.56659 72.45499 705.57853" material="" geometry="" scale="4.56 9.43 1" rotation="0 0 2.48" opacity="1" transparent="true"></a-video>
    <a-video src="#webcam" width="16" height="9" position="67.56659 136.48739 705.57853" material="" geometry="" scale="4.56 9.43 1" rotation="0 0 2.48" opacity="1" transparent="true"></a-video>
-   <a-video src="#webcam" width="16" height="9" position="67.56659 220.92965 705.57853" material="" geometry="" scale="4.56 9.43 1" rotation="0 0 2.48" opacity="1" transparent="true"></a-video>
+   <a-video src="#webcam" width="16" height="9" position="67.56659 220.92965 705.57853" material="" geometry="" scale="4.56 9.43 1" rotation="0 0 2.48" opacity="1" transparent="true"></a-video> -->
    <a-video src="#webcam" width="16" height="9" position="178.26167 121.60183 705.57853" material="" geometry="" scale="20 40 1" rotation="0 0 2.48" opacity="1" transparent="true"></a-video>
+   <a-video src="#webcam" width="16" height="9" position="414.89296 43.55737 297.01684" material="" geometry="" scale="40 15 1" rotation="0 59.99999999999999 0" opacity="1" transparent="true"></a-video>
 
-         <a-sky src="#sky" radius="500" position="0 0 0"  opacity="1" transparent="true"></a-sky>
-         <a-sky src="#sky2" radius="500" position="0 0 0"  animation="property: material.opacity; to: 0; loop: false; dur: 25000;" transparent="true"></a-sky>
+         <a-sky src="#sky" radius="500" position="0 0 0" opacity="1" transparent="true"></a-sky>
+         <a-sky src="#sky2" radius="300" position="0 0 0" rotation="0 0 0" transparent="true"></a-sky>
+         <!-- animation="property: material.opacity; to: 0; loop: false; dur: 25000;" transparent="true"> -->
       </a-scene>
     </body>
   </html>
